@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 
@@ -18,6 +19,8 @@ object AppModule {
     @Singleton
     //この処理を提供してくれることのアノテーション
     @Provides
-    fun provideTestString() = "TEST STRING WILL INJECT!!"
+    //2つ以上あるときはどっちをインジェクトするかを決めるために名前を付ける
+    @Named("TestString1")
+    fun provideTestString1() = "TEST STRING WILL INJECT!!"
 
 }
